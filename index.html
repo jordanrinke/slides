@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doris Duke Foundation | Brain Health & Social Adversity</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reset.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --deep-navy: #0d1b2a;
+      --midnight: #1a2c3d;
+      --teal: #1a7a8a;
+      --teal-light: #2a9daf;
+      --gold: #c9a84c;
+      --gold-light: #e0c06a;
+      --cream: #f5f0e8;
+      --white: #ffffff;
+      --text-muted: rgba(255,255,255,0.65);
+    }
+
+    .reveal-viewport {
+      background: var(--deep-navy);
+    }
+
+    .reveal {
+      font-family: 'Inter', sans-serif;
+      color: var(--white);
+    }
+
+    /* ── Global headings ── */
+    .reveal h1, .reveal h2, .reveal h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-transform: none;
+      line-height: 1.15;
+    }
+
+    .reveal h1 { font-size: 2.6rem; }
+    .reveal h2 { font-size: 1.9rem; }
+    .reveal h3 { font-size: 1.3rem; font-family: 'Inter', sans-serif; font-weight: 600; }
+
+    .reveal p, .reveal li {
+      font-size: 1.05rem;
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    .reveal ul {
+      list-style: none;
+      padding: 0;
+    }
+    .reveal ul li {
+      padding-left: 1.4em;
+      position: relative;
+      margin-bottom: 0.5em;
+    }
+    .reveal ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 400;
+    }
+
+    /* ── Slide base ── */
+    .reveal .slides section {
+      padding: 2.5rem 3rem;
+      box-sizing: border-box;
+      text-align: left;
+    }
+
+    /* ── Slide variants ── */
+
+    /* TITLE SLIDE */
+    .slide-title {
+      background: linear-gradient(135deg, #0d1b2a 0%, #14303f 50%, #0a2233 100%);
+      text-align: center !important;
+    }
+    .slide-title .foundation-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.8rem;
+    }
+    .slide-title h1 {
+      font-size: 2.8rem;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+    }
+    .slide-title .subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      font-style: italic;
+      margin-bottom: 2.5rem;
+    }
+    .slide-title .driver-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--deep-navy);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.4em 1.2em;
+      border-radius: 2em;
+    }
+
+    /* DRIVER BADGE reused */
+    .badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.3em 1em;
+      border-radius: 2em;
+    }
+    .badge-gold  { background: var(--gold);  color: var(--deep-navy); }
+    .badge-teal  { background: var(--teal-light); color: var(--white); }
+    .badge-ghost { border: 1px solid var(--gold); color: var(--gold); }
+
+    /* SECTION DIVIDER */
+    .slide-divider {
+      background: linear-gradient(135deg, var(--teal) 0%, #0d5f70 100%);
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .slide-divider h2 {
+      color: var(--white);
+      font-size: 2.4rem;
+    }
+    .slide-divider p {
+      color: rgba(255,255,255,0.75);
+      font-style: italic;
+      font-size: 1rem;
+    }
+
+    /* CONTENT SLIDE */
+    .slide-content {
+      background: var(--midnight);
+    }
+
+    /* ACCENT SLIDE */
+    .slide-accent {
+      background: linear-gradient(160deg, #122535 0%, #1a3245 100%);
+    }
+
+    /* QUOTE SLIDE */
+    .slide-quote {
+      background: var(--deep-navy);
+      display: flex !important;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .slide-quote blockquote {
+      border-left: 4px solid var(--gold);
+      padding: 0.8rem 1.5rem;
+      margin: 0 0 1.5rem 0;
+      background: rgba(255,255,255,0.04);
+      border-radius: 0 0.5rem 0.5rem 0;
+      font-style: italic;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      color: var(--cream);
+    }
+
+    /* PATHWAY DIAGRAM */
+    .pathway {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin: 1.8rem 0;
+      flex-wrap: nowrap;
+    }
+    .pathway-node {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 0.75rem;
+      padding: 0.9rem 1rem;
+      text-align: center;
+      flex: 1;
+      min-width: 0;
+    }
+    .pathway-node .node-icon {
+      font-size: 1.6rem;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .pathway-node .node-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .pathway-node .node-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .pathway-arrow {
+      color: var(--gold);
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      padding: 0 0.4rem;
+    }
+
+    /* CARDS GRID */
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 0.75rem;
+      padding: 1rem 1.1rem;
+    }
+    .card-full {
+      grid-column: 1 / -1;
+    }
+    .card h3 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+    .card p, .card li {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.8);
+    }
+
+    /* TWO-COL LAYOUT */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.6rem;
+      margin-top: 1rem;
+    }
+
+    /* SECTOR TAGS */
+    .sector-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+    .sector-tag {
+      background: rgba(26,122,138,0.25);
+      border: 1px solid var(--teal-light);
+      color: #7fd8e8;
+      border-radius: 0.4rem;
+      padding: 0.35em 0.8em;
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    /* HIGHLIGHT TEXT */
+    .hl { color: var(--gold-light); font-weight: 500; }
+    .hl-teal { color: #7fd8e8; font-weight: 500; }
+
+    /* RULE LINE */
+    .rule {
+      width: 3.5rem;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin: 0.8rem 0 1.2rem;
+    }
+
+    /* FUTURE SLIDE */
+    .slide-future {
+      background: linear-gradient(160deg, #0d1b2a 0%, #0a2e1f 100%);
+    }
+    .future-vision {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 1rem;
+      padding: 1.4rem 1.6rem;
+      margin-top: 1rem;
+    }
+    .future-vision p {
+      color: rgba(255,255,255,0.85);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    /* CLOSING SLIDE */
+    .slide-closing {
+      background: linear-gradient(135deg, #0d1b2a 0%, #14303f 60%, #0a2233 100%);
+      text-align: center !important;
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* FOOTER on slides */
+    .slide-footer {
+      position: absolute;
+      bottom: 1rem;
+      right: 1.5rem;
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* Reveal.js overrides */
+    .reveal .progress { background: rgba(255,255,255,0.08); }
+    .reveal .progress span { background: var(--gold); }
+    .reveal .controls { color: var(--gold); }
+
+    /* Fragment animations */
+    .reveal .fragment { opacity: 0; transition: opacity 0.4s ease; }
+    .reveal .fragment.visible { opacity: 1; }
+  </style>
+</head>
+
+<body>
+<div class="reveal">
+  <div class="slides">
+
+    <!-- ══════════════════════════════════════════
+         SLIDE 1 · TITLE
+    ══════════════════════════════════════════ -->
+    <section class="slide-title">
+      <div class="foundation-label">Doris Duke Foundation &nbsp;·&nbsp; Health Research Application</div>
+      <h1>From Adversity to Alzheimer's Risk</h1>
+      <p class="subtitle">
+        How childhood experience and social stress become<br />
+        biologically embedded—and what that means for brain health
+      </p>
+      <div>
+        <span class="driver-badge">Social Driver of Health</span>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SLIDE 2 · THE PROBLEM
+    ══════════════════════════════════════════ -->
+    <section class="slide-content">
+      <div class="badge badge-gold" style="margin-bottom:0.8rem;">The Problem</div>
+      <h2>We're Looking Too Late</h2>
+      <div class="rule"></div>
+      <p>
+        Cognitive decline and dementia-related conditions are typically addressed
+        only <span class="hl">after symptoms become clinically visible</span>—
+        a point at which opportunities for prevention are already limited.
+      </p>
+      <div class="cards" style="margin-top:1.4rem;">
+        <div class="card">
+          <h3>What we miss</h3>
+          <ul>
+            <li>Decades of biological risk accumulation</li>
+            <li>Social and early-life contributors to that risk</li>
+            <li>Modifiable windows for intervention</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Who is most harmed</h3>
+          <ul>
+            <li>Communities with high adversity exposure</li>
+            <li>Populations historically underserved by care</li>
+            <li>Immigrant communities with unique stress profiles</li>
+          </ul>
+        </div>
+        <div class="card card-full">
+          <h3>The disparity gap</h3>
+          <p>
+            Algorithms that guide clinical decision-making—including diagnostic
+            equations—too often treat race as a biological category,
+            and collapse heterogeneous populations (e.g., all Latino individuals)
+            into a single group, erasing meaningful differences in migration
+            experience, stress exposure, and risk.
+          </p>
+        </div>
+      </div>
+      <div class="slide-footer">Doris Duke Foundation</div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SLIDE 3 · RESEARCH QUESTION
+    ══════════════════════════════════════════ -->
+    <section class="slide-quote">
+      <div class="badge badge-teal" style="margin-bottom:1rem;">Research Question</div>
+      <blockquote>
+        How does early-life adversity get <em>"under the skin"</em>—shaping
+        inflammation, cognitive aging, and brain health across the life course?
+      </blockquote>
+      <p style="color: var(--text-muted); font-size:0.95rem;">
+        More specifically: how do adverse childhood experiences and life-course
+        social adversity become <span class="hl">biologically embedded through
+        inflammatory pathways</span>, and how do these processes contribute to
+        cognitive aging and later-life brain health disparities?
+      </p>
+      <div class="slide-footer">Doris Duke Foundation</div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SLIDE 4 · THE PATHWAY
+    ══════════════════════════════════════════ -->
+    <section class="slide-accent">
+      <div class="badge badge-gold" style="margin-bottom:0.8rem;">Conceptual Framework</div>
+      <h2>The Biological Embedding Pathway</h2>
+      <div class="rule"></div>
+
+      <div class="pathway">
+        <div class="pathway-node">
+          <span class="node-icon">🌱</span>
+          <span class="node-label">Early Life</span>
+          <span class="node-desc">Adverse childhood<br/>experiences (ACEs)</span>
+        </div>
+        <div class="pathway-arrow">→</div>
+        <div class="pathway-node">
+          <span class="node-icon">⚡</span>
+          <span class="node-label">Life-Course</span>
+          <span class="node-desc">Chronic social stress,<br/>trauma, disadvantage</span>
+        </div>
+        <div class="pathway-arrow">→</div>
+        <div class="pathway-node">
+          <span class="node-icon">🔬</span>
+          <span class="node-label">Biology</span>
+          <span class="node-desc">Inflammatory pathways;<br/>biological embedding</span>
+        </div>
+        <div class="pathway-arrow">→</div>
+        <div class="pathway-node">
+          <span class="node-icon">🧠</span>
+          <span class="node-label">Outcome</span>
+          <span class="node-desc">Cognitive aging,<br/>brain health risk</span>
+        </div>
+      </div>
+
+      <div class="cards" style="margin-top:0.6rem;">
+        <div class="card">
+          <h3>Social inputs</h3>
+          <ul>
+            <li>Adverse childhood experiences</li>
+            <li>Socioeconomic disadvantage</li>
+            <li>Migration-related stress</li>
+            <li>Trauma &amp; chronic social stress</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Why inflammation?</h3>
+          <p>
+            Chronic stress dysregulates immune function, elevating
+            inflammatory markers (e.g., IL-6, CRP) over time. Sustained
+            low-grade inflammation is a known pathway to neurodegeneration
+            and cognitive decline.
+          </p>
+        </div>
+      </div>
+      <div class="slide-footer">Doris Duke Foundation</div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SLIDE 5 · SOCIAL DRIVER + HETEROGENEITY
+    ══════════════════════════════════════════ -->
+    <section class="slide-content">
+      <div class="badge badge-gold" style="margin-bottom:0.8rem;">Social Driver of Health</div>
+      <h2>Social Adversity Is Not Monolithic</h2>
+      <div class="rule"></div>
+
+      <div class="two-col">
+        <div>
+          <p style="font-size:0.95rem;">
+            This research centers the <span class="hl">social driver of health</span>,
+            with connections to clinical, behavioral, and economic drivers.
+          </p>
+          <ul style="margin-top:0.8rem;">
+            <li>Adverse childhood experiences</li>
+            <li>Chronic stress &amp; trauma</li>
+            <li>Socioeconomic disadvantage</li>
+            <li>Migration-related experiences</li>
+            <li>Educational opportunity</li>
+            <li>Social isolation &amp; resource access</li>
+          </ul>
+        </div>
+        <div>
+          <div class="card" style="margin-bottom:0.9rem;">
+            <h3>The heterogeneity problem</h3>
+            <p>
+              Latino individuals are treated as a single category in clinical
+              and research algorithms, yet they arrive with vastly different
+              migration histories, reasons for migration, socioeconomic
+              trajectories, and stress exposures—each of which shapes
+              biological risk differently.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Race in algorithms</h3>
+            <p>
+              Mathematical models that include race as a proxy for biology
+              can entrench disparities. This research supports frameworks
+              that replace race-as-biology with <em>social history
+              and lived experience</em> as the meaningful variable.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="slide-footer">Doris Duke Foundation</div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SLIDE 6 · SIGNIFICANCE
+    ══════════════════════════════════════════ -->
+    <section class="slide-accent">
+      <div class="badge badge-gold" style="margin-bottom:0.8rem;">Significance</div>
+      <h2>Why This Research Question Matters</h2>
+      <div class="rule"></div>
+
+      <p>
+        Cognitive decline is typically addressed only after symptoms become
+        clinically visible—limiting opportunities for prevention.
+        This work <span class="hl">shifts attention upstream</span>.
+      </p>
+
+      <div class="cards" style="margin-top:1.2rem;">
+        <div class="card">
+          <h3>Earlier risk identification</h3>
+          <p>
+            By linking social history and biomarkers, the research can help
+            identify individuals at elevated cognitive risk long before
+            traditional clinical screening detects impairment.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Prevention-oriented science</h3>
+          <p>
+            Inflammatory pathways are modifiable. Understanding how adversity
+            activates them opens windows for intervention that pure
+            disease-focused models miss.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Addressing disparities</h3>
+          <p>
+            Populations with the highest adversity exposure bear disproportionate
+            cognitive-aging burden. Life-course evidence can redirect resources
+            toward those most at risk.
+          </p>
+        </div>
+        <div class="card">
+          <h3>A fuller biological model</h3>
+          <p>
+            Integrating social history with biomarkers produces richer,
+            more accurate models of cognitive aging than biology alone.
+          </p>
+        </div>
+      </div>
+      <div class="slide-footer">Doris Duke Foundation</div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SLIDE 7 · FROM SCIENCE TO APPLICATION
+    ══════════════════════════════════════════ -->
+    <section class="slide-content">
+      <div class="badge badge-teal" style="margin-bottom:0.8rem;">Research → Application</div>
+      <h2>Who Uses This Research &amp; How</h2>
+      <div class="rule"></div>
+
+      <div class="cards">
+        <div class="card">
+          <h3>🏥 Clinical Care</h3>
+          <p>
+            Physicians, neuropsychologists, and geriatric providers can use
+            adversity-informed screening tools to identify elevated cognitive
+            risk earlier and tailor prevention conversations.
+          </p>
+        </div>
+        <div class="card">
+          <h3>🌍 Public Health</h3>
+          <p>
+            Population-level brain-health programs can incorporate social
+            risk factors into surveillance, prevention campaigns, and
+            community-based screening strategies.
+          </p>
+        </div>
+        <div class="card">
+          <h3>🤝 Community Organizations</h3>
+          <p>
+            Aging services, immigrant-serving organizations, and
+            trauma-informed programs gain evidence to design culturally
+            responsive interventions that address the social roots of
+            cognitive decline.
+          </p>
+        </div>
+        <div class="card">
+          <h3>📚 Education &amp; Social Services</h3>
+          <p>
+            ACEs-prevention programs, early childhood intervention, and
+            family support services can frame their work as brain-health
+            investment—connecting upstream social action to downstream
+            cognitive outcomes.
+          </p>
+        </div>
+        <div class="card card-full">
+          <h3>🔬 Research &amp; Biomedical Science</h3>
+          <p>
+            Biomarker and cohort studies gain improved models that integrate
+            social history and life-course exposures—moving the field toward
+            a more complete and equitable understanding of cognitive aging.
+          </p>
+        </div>
+      </div>
+      <div class="slide-footer">Doris Duke Foundation</div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SLIDE 8 · THE CHANGE
+    ══════════════════════════════════════════ -->
+    <section class="slide-quote">
+      <div class="badge badge-gold" style="margin-bottom:1rem;">The Change</div>
+      <h2 style="font-size:1.7rem; margin-bottom:0.8rem; color: var(--white);">
+        Moving Brain Health Research Upstream
+      </h2>
+      <div class="rule"></div>
+
+      <div class="two-col" style="margin-top:0.8rem;">
+        <div>
+          <p style="font-size:0.9rem; color: var(--text-muted); margin-bottom:0.5rem;">FROM</p>
+          <div style="background:rgba(255,255,255,0.04); border-radius:0.75rem; padding:1rem; border:1px solid rgba(255,255,255,0.08);">
+            <ul>
+              <li style="font-size:0.9rem;">Disease-focused, late-life clinical model</li>
+              <li style="font-size:0.9rem;">Intervention only after symptoms appear</li>
+              <li style="font-size:0.9rem;">Biology as the sole unit of analysis</li>
+              <li style="font-size:0.9rem;">Race treated as biology in algorithms</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <p style="font-size:0.9rem; color: var(--gold-light); margin-bottom:0.5rem;">TO</p>
+          <div style="background:rgba(201,168,76,0.08); border-radius:0.75rem; padding:1rem; border:1px solid rgba(201,168,76,0.25);">
+            <ul>
+              <li style="font-size:0.9rem;">Life-course, prevention-oriented model</li>
+              <li style="font-size:0.9rem;">Earlier identification of modifiable risk</li>
+              <li style="font-size:0.9rem;">Social experience integrated with biology</li>
+              <li style="font-size:0.9rem;">Lived experience as the meaningful variable</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <p style="margin-top:1.4rem; font-size:0.95rem; color:rgba(255,255,255,0.8);">
+        The goal is not simply to reduce inflammation or improve cognition scores.
+        It is to <span class="hl">shift the field</span> toward an integrated understanding
+        of brain health as shaped by social experience, biological embedding,
+        and opportunity across the life course.
+      </p>
+      <div class="slide-footer">Doris Duke Foundation</div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SLIDE 9 · HEALTH OUTCOMES
+    ══════════════════════════════════════════ -->
+    <section class="slide-accent">
+      <div class="badge badge-gold" style="margin-bottom:0.8rem;">Health Outcomes</div>
+      <h2>What Changes for People</h2>
+      <div class="rule"></div>
+
+      <p>
+        By shifting upstream and integrating social adversity with biological
+        markers, this research aims to produce <span class="hl">measurable
+        improvements in cognitive health outcomes</span>:
+      </p>
+
+      <div class="cards" style="margin-top:1.2rem;">
+        <div class="card">
+          <h3>Earlier identification</h3>
+          <p>
+            Individuals who carry cumulative adversity-related biological risk
+            are identified and supported before cognitive impairment develops.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Trauma-informed screening</h3>
+          <p>
+            Screening tools and clinical conversations incorporate social
+            history alongside biomarkers, producing more accurate and
+            equitable risk assessment.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Reduced cognitive decline</h3>
+          <p>
+            Prevention and intervention strategies informed by life-course
+            evidence can reduce rates of cognitive decline in high-risk,
+            historically underserved populations.
+          </p>
+        </div>
+        <div class="card">
+          <h3>More equitable brain health</h3>
+          <p>
+            Social and biological risk are recognized and addressed together,
+            narrowing disparities in cognitive aging outcomes across the life span.
+          </p>
+        </div>
+      </div>
+      <div class="slide-footer">Doris Duke Foundation</div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SLIDE 10 · THE FUTURE VISION
+    ══════════════════════════════════════════ -->
+    <section class="slide-future">
+      <div class="badge badge-gold" style="margin-bottom:0.8rem;">Vision</div>
+      <h2>A Future We Are Working Toward</h2>
+      <div class="rule"></div>
+
+      <div class="future-vision">
+        <p>
+          A future in which <span class="hl">brain health is not treated only as
+          a late-life clinical issue</span>, but as something shaped across the
+          life course by social experience, stress, biology, and access to support.
+        </p>
+      </div>
+
+      <div class="cards" style="margin-top:1rem;">
+        <div class="card">
+          <h3>Health systems</h3>
+          <p>
+            Better equipped to recognize how adversity becomes risk, and to
+            integrate that recognition into earlier, more equitable care.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Community organizations</h3>
+          <p>
+            Empowered with evidence to intervene on modifiable factors—chronic
+            stress, social isolation, limited support—before cognitive decline
+            takes hold.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Underserved populations</h3>
+          <p>
+            Communities that have historically been overlooked or harmed by
+            clinical algorithms benefit from research built around their
+            actual lived experience and heterogeneous risk profiles.
+          </p>
+        </div>
+        <div class="card">
+          <h3>The science itself</h3>
+          <p>
+            A field that measures cognitive aging the way it actually occurs—
+            across the life course, shaped by social history and biological
+            embedding together.
+          </p>
+        </div>
+      </div>
+      <div class="slide-footer">Doris Duke Foundation</div>
+    </section>
+
+    <!-- ══════════════════════════════════════════
+         SLIDE 11 · CLOSING
+    ══════════════════════════════════════════ -->
+    <section class="slide-closing">
+      <div class="foundation-label" style="
+        font-family: 'Inter', sans-serif;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 2rem;
+      ">Doris Duke Foundation &nbsp;·&nbsp; Health Research Application</div>
+
+      <h1 style="font-size:2.2rem; margin-bottom:1rem;">
+        Brain health is shaped long before<br/>
+        <em style="color: var(--gold-light);">cognitive decline appears.</em>
+      </h1>
+
+      <p style="color: var(--text-muted); max-width:34rem; margin:0 auto 2.5rem; font-size:1rem; line-height:1.7;">
+        By understanding how adversity becomes biology, we can act earlier,
+        intervene more equitably, and protect cognitive health across
+        the full span of life.
+      </p>
+
+      <div style="display:flex; gap:0.7rem; justify-content:center; flex-wrap:wrap;">
+        <span class="badge badge-gold">Social</span>
+        <span class="badge badge-ghost">Clinical</span>
+        <span class="badge badge-ghost">Behavioral</span>
+        <span class="badge badge-ghost">Economic</span>
+      </div>
+
+      <div style="margin-top:3rem; font-size:0.72rem; color:rgba(255,255,255,0.2); letter-spacing:0.08em; text-transform:uppercase;">
+        ACEs &nbsp;·&nbsp; Inflammation &nbsp;·&nbsp; Cognitive Aging &nbsp;·&nbsp; Brain Health Equity
+      </div>
+    </section>
+
+  </div><!-- /slides -->
+</div><!-- /reveal -->
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    progress: true,
+    controls: true,
+    center: false,
+    transition: 'fade',
+    transitionSpeed: 'slow',
+    backgroundTransition: 'fade',
+    slideNumber: 'c/t',
+    overview: true,
+    keyboard: true,
+    touch: true,
+    fragments: true,
+    autoPlayMedia: true,
+    width: 1280,
+    height: 720,
+    margin: 0.04,
+    minScale: 0.2,
+    maxScale: 2.0,
+  });
+</script>
+</body>
+</html>
